@@ -35,10 +35,17 @@ void setup() {
 
 //常に繰り返し実行するdraw関数
 void draw() {
-  for (int i = 0; i < n; i++) {
+  //i=0のみ実行（tamabi01.csvのみ）
+  for (int i = 0; i < 1; i++) {
     for (int j = 0; j < column; j++) {
-      for (int k = 0; k < row[i]; k++) {
+      for (int k = 1; k < row[i]; k++) {
         /* ------------ここに処理を書く-------------- */
+        //線を描画しない
+        noStroke();
+        //色彩を5列目の値に設定
+        fill(float(data[i][4][k]) * 2.55, 255, 255);
+        //横軸行数，縦軸5列目の値，半径10の円
+        ellipse(width / 10 + k, height / 2- float(data[i][4][k]), 10, 10);
       }
     }
   }
@@ -54,7 +61,7 @@ void loadCSV() {
     //9以上のときは1を足して10-，未満は01-09
     num = i >= 9 ? str(i + 1) : "0" + str(i + 1);
     //ファイル名で読み込む
-    id[i] = loadTable("../../../Data/02_second/tamabi" + num + ".csv");
+    id[i] = loadTable("../../Data/02_second/tamabi" + num + ".csv");
   }
 }
 
@@ -72,4 +79,5 @@ void buffer() {
     }
   }
 }
+
 

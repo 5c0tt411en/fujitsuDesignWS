@@ -21,6 +21,8 @@ void setup() {
   fileName = str(year()) + str(month()) + str(day()) + str(hour()) + str(minute()) + str(second());
   //ループしない
   noLoop();
+  //塗りつぶししない
+  noFill();
   //pdf書き出し用キャプチャを指定のファイル名で開始
   beginRecord (PDF, fileName + ".pdf");
   //カラーモードの設定（今回はHSB（色相，彩度，明度））
@@ -40,16 +42,12 @@ void draw() {
     for (int j = 0; j < column; j++) {
       for (int k = 1; k < row[i]; k++) {
         /* ------------ここに処理を書く-------------- */
-        //色彩を5列目の値に設定
-        stroke(float(data[i][4][k]) * 1.5 + 50, 255, 255);
+        //線の色を黒に設定
+        stroke(2.55, 255, 0);
         //線の幅を1pixelに設定
         strokeWeight(1);
         //点と点の間を線でつなぐ
-        if (k < row[i] - 1) line(width / 10 + k, height / 2, width / 10 + k, height / 2- float(data[i][4][k + 1]));
-        //文字色を赤に設定
-        fill(0, 255, 255);
-        //100の倍数行目でテキストを打つ
-        if (k % 100 == 0) text(data[i][1][k] + " value: " + data[i][4][k], width / 10 + k + 2, height / 2 - float(data[i][4][k]) - 2);
+        if (k < row[i] - 1) line(width / 10 + k, height / 2- float(data[i][4][k]), width / 10 + (k + 1), height / 2- float(data[i][4][k + 1]));
       }
     }
   }
@@ -65,7 +63,7 @@ void loadCSV() {
     //9以上のときは1を足して10-，未満は01-09
     num = i >= 9 ? str(i + 1) : "0" + str(i + 1);
     //ファイル名で読み込む
-    id[i] = loadTable("../../../Data/02_second/tamabi" + num + ".csv");
+    id[i] = loadTable("../../Data/02_second/tamabi" + num + ".csv");
   }
 }
 

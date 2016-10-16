@@ -21,8 +21,6 @@ void setup() {
   fileName = str(year()) + str(month()) + str(day()) + str(hour()) + str(minute()) + str(second());
   //ループしない
   noLoop();
-  //塗りつぶししない
-  noFill();
   //pdf書き出し用キャプチャを指定のファイル名で開始
   beginRecord (PDF, fileName + ".pdf");
   //カラーモードの設定（今回はHSB（色相，彩度，明度））
@@ -37,17 +35,10 @@ void setup() {
 
 //常に繰り返し実行するdraw関数
 void draw() {
-  //i=0のみ実行（tamabi01.csvのみ）
-  for (int i = 0; i < 1; i++) {
+  for (int i = 0; i < n; i++) {
     for (int j = 0; j < column; j++) {
-      for (int k = 1; k < row[i]; k++) {
+      for (int k = 0; k < row[i]; k++) {
         /* ------------ここに処理を書く-------------- */
-        //線の色を黒に設定
-        stroke(2.55, 255, 0);
-        //線の幅を1pixelに設定
-        strokeWeight(1);
-        //点と点の間を線でつなぐ
-        if (k < row[i] - 1) line(width / 10 + k, height / 2- float(data[i][4][k]), width / 10 + (k + 1), height / 2- float(data[i][4][k + 1]));
       }
     }
   }
@@ -63,7 +54,7 @@ void loadCSV() {
     //9以上のときは1を足して10-，未満は01-09
     num = i >= 9 ? str(i + 1) : "0" + str(i + 1);
     //ファイル名で読み込む
-    id[i] = loadTable("../../../Data/02_second/tamabi" + num + ".csv");
+    id[i] = loadTable("../../Data/02_second/tamabi" + num + ".csv");
   }
 }
 
@@ -81,5 +72,4 @@ void buffer() {
     }
   }
 }
-
 

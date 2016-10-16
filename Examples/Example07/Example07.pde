@@ -21,8 +21,6 @@ void setup() {
   fileName = str(year()) + str(month()) + str(day()) + str(hour()) + str(minute()) + str(second());
   //ループしない
   noLoop();
-  //線を描画しない
-  noStroke();
   //pdf書き出し用キャプチャを指定のファイル名で開始
   beginRecord (PDF, fileName + ".pdf");
   //カラーモードの設定（今回はHSB（色相，彩度，明度））
@@ -42,10 +40,16 @@ void draw() {
     for (int j = 0; j < column; j++) {
       for (int k = 1; k < row[i]; k++) {
         /* ------------ここに処理を書く-------------- */
-        //色彩を黒に設定
-        fill(255, 255, 0);
-        //横軸行数，縦軸5列目の値，半径10の円
-        ellipse(width / 10 + k, height / 2- float(data[i][4][k]), 10, 10);
+        pushMatrix();
+        //原点を中央に移動
+        translate(width / 2, height / 2);
+        //全部の値で1周するように少しずつ回転
+        rotate(2 * PI * k / 714);
+        //色彩を5列目の値に設定
+        stroke(float(data[i][4][k]), 255, 255);
+        //線を縦に引く
+        line(0, - 100, 0, - 100 - float(data[i][4][k]) * 2);
+        popMatrix();
       }
     }
   }
@@ -61,7 +65,7 @@ void loadCSV() {
     //9以上のときは1を足して10-，未満は01-09
     num = i >= 9 ? str(i + 1) : "0" + str(i + 1);
     //ファイル名で読み込む
-    id[i] = loadTable("../../../Data/02_second/tamabi" + num + ".csv");
+    id[i] = loadTable("../../Data/02_second/tamabi" + num + ".csv");
   }
 }
 

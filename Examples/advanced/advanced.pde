@@ -204,7 +204,7 @@ void loadCSV() {
   for (int i = 0; i < n; i++) {
     String num;
     num = i >= 9 ? str(i + 1) : "0" + str(i + 1);
-    id[i] = loadTable("../../../Data/02_second/tamabi" + num + ".csv");
+    id[i] = loadTable("../../Data/02_second/tamabi" + num + ".csv");
   }
 }
 
