@@ -1,4 +1,4 @@
-\documentclass[dvipdfmx]{beamer}
+\documentclass[10pt, dvipdfmx]{beamer}
 \AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
 \usetheme{default}
 \usefonttheme{professionalfonts}
@@ -343,9 +343,171 @@
         \end{frame}
 
 % 型
+        \begin{frame}
+            \frametitle{型}
+            \begin{columns}[c]
+                \begin{column}{0.50\textwidth}
+                    \tiny
+                    Examples/lecture/type01/type01.pde
+                    \scriptsize
+                    \verbatimtabinput{../Examples/lecture/type01/type01.pde}
+                \end{column}
+                \begin{column}{0.50\textwidth}
+                    \begin{block}{いろんな型}
+                        \begin{itemize}
+                            \item 整数
+                            \item 少数
+                            \item 文字列
+                            \item 真偽
+                            \item 点(50, 50)から横50px, 縦50pxの円？
+                        \end{itemize}
+                    \end{block}
+                \end{column}
+            \end{columns}
+        \end{frame}
+
+        \begin{frame}
+            \frametitle{正しくは．．．}
+            \begin{columns}[c]
+                \begin{column}{0.50\textwidth}
+                    \tiny
+                    Examples/lecture/type02/type02.pde
+                    \scriptsize
+                    \verbatimtabinput{../Examples/lecture/type02/type02.pde}
+                \end{column}
+                \begin{column}{0.50\textwidth}
+                    \begin{block}{キャストとは}
+                        \begin{itemize}
+                            \item 違う型にうつす
+                            \item 文字列sを少数に
+                            \item 点(50, 50)から横50px, 縦50pxの円
+                        \end{itemize}
+                    \end{block}
+                \end{column}
+            \end{columns}
+        \end{frame}
+
+        \begin{frame}
+            \frametitle{実行結果}
+                \begin{figure}[htb]
+                    \includegraphics[width=24mm]{images/11.png}
+                    \caption{円がかけた}
+                    \label{fig:11}
+                \end{figure}
+        \end{frame}
+
 % if文
+        \begin{frame}
+            \frametitle{条件文}
+            \begin{columns}[c]
+                \begin{column}{0.50\textwidth}
+                    \tiny
+                    Examples/lecture/joken/joken.pde
+                    \scriptsize
+                    \verbatimtabinput{../Examples/lecture/joken/joken.pde}
+                \end{column}
+                \begin{column}{0.50\textwidth}
+                    \begin{block}{if文}
+                        \begin{itemize}
+                            \item 比較演算子いろいろで数字を比較
+                            \item if(xxxx) 文．xxxは真偽
+                        \end{itemize}
+                    \end{block}
+                \end{column}
+            \end{columns}
+        \end{frame}
+
 % for文
+        \begin{frame}
+            \frametitle{繰り返し}
+            \begin{columns}[c]
+                \begin{column}{0.50\textwidth}
+                    \tiny
+                    Examples/lecture/loop/loop.pde
+                    \scriptsize
+                    \verbatimtabinput{../Examples/lecture/loop/loop.pde}
+                \end{column}
+                \begin{column}{0.50\textwidth}
+                    \begin{block}{for文}
+                        \begin{itemize}
+                            \item 0 から 9 まで
+                            \item カッコ内の処理を繰り返す
+                        \end{itemize}
+                    \end{block}
+                \end{column}
+            \end{columns}
+        \end{frame}
+
+        \begin{frame}
+            \frametitle{実行結果}
+                \begin{figure}[htb]
+                    \includegraphics[width=61mm]{images/12.png}
+                    \caption{円が10個かけた}
+                    \label{fig:12}
+                \end{figure}
+        \end{frame}
+
 % 配列
+        \begin{frame}
+            \frametitle{配列}
+            \begin{columns}[c]
+                \begin{column}{0.50\textwidth}
+                    \tiny
+                    Examples/lecture/array/array.pde
+                    \scriptsize
+                    \verbatimtabinput{../Examples/lecture/array/array.pde}
+                \end{column}
+                \begin{column}{0.50\textwidth}
+                    \begin{block}{配列}
+                        \begin{itemize}
+                            \item nという5つの箱（配列）を準備
+                            \item for文のなかで，0から4番目の箱に値を入れる
+                        \end{itemize}
+                    \end{block}
+                \end{column}
+            \end{columns}
+        \end{frame}
+
+ % サンプルプログラムをみる
+        \begin{frame}
+            \frametitle{}
+            \centering
+            \large
+            それではサンプルプログラムを見てみましょう．
+        \end{frame}
+
+        % \begin{frame}
+        %     \frametitle{Example01.pde}
+        %     \begin{columns}[c]
+        %         \begin{column}{0.50\textwidth}
+        %             % \tiny
+        %             Examples/Example01/Example01.pde
+        %             \scriptsize
+        %             \verbatimtabinput{../Examples/Example01/Example01.pde}
+        %         \end{column}
+        %         \begin{column}{0.50\textwidth}
+        %             \begin{block}{色（stroke, fill）を変える．}
+        %                 \begin{itemize}
+        %                     \item 色空間をHSBで
+        %                     \item 線色を色彩50, 彩度255, 明度255で
+        %                     \item 塗り色を色彩122, 彩度255, 明度255で
+        %                     \item 背景を色彩200, 彩度255, 明度255で
+        %                     \item 線幅10pxで
+        %                     \item 点(50, 50)から横80px. 縦80pxの円
+        %                 \end{itemize}
+        %             \end{block}
+        %         \end{column}
+        %     \end{columns}
+        % \end{frame}
+        %
+        % \begin{frame}
+        %     \frametitle{実行結果}
+        %         \begin{figure}[htb]
+        %             \includegraphics[width=24mm]{images/09.png}
+        %             \caption{色が変わった}
+        %             \label{fig:09}
+        %         \end{figure}
+        % \end{frame}
 
         % \begin{frame}\frametitle{CSVを読み込む}
         % \end{frame}
