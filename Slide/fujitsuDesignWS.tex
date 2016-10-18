@@ -335,11 +335,23 @@
 
         \begin{frame}
             \frametitle{HSB色空間}
-                \begin{figure}[htb]
-                    \includegraphics[width=51mm]{images/10.png}
-                    \caption{Adobe IllustratorにおけるHSB設定}
-                    \label{fig:10}
-                \end{figure}
+            \begin{columns}[c]
+                \begin{column}{0.50\textwidth}
+                    \begin{figure}[htb]
+                        \includegraphics[width=36mm]{images/10.png}
+                        \caption{HSB図（色彩 vs 彩度）}
+                        \label{fig:10}
+                    \end{figure}
+                \end{column}
+                \begin{column}{0.50\textwidth}
+                    \begin{block}{色決めの指針（明度255の場合）}
+                        \begin{itemize}
+                            \item 色彩は左から右に0 - 255
+                            \item 彩度は上から下に0 - 255
+                        \end{itemize}
+                    \end{block}
+                \end{column}
+            \end{columns}
         \end{frame}
 
 % 型
@@ -476,41 +488,32 @@
             それではサンプルプログラムを見てみましょう．
         \end{frame}
 
-        % \begin{frame}
-        %     \frametitle{Example01.pde}
-        %     \begin{columns}[c]
-        %         \begin{column}{0.50\textwidth}
-        %             % \tiny
-        %             Examples/Example01/Example01.pde
-        %             \scriptsize
-        %             \verbatimtabinput{../Examples/Example01/Example01.pde}
-        %         \end{column}
-        %         \begin{column}{0.50\textwidth}
-        %             \begin{block}{色（stroke, fill）を変える．}
-        %                 \begin{itemize}
-        %                     \item 色空間をHSBで
-        %                     \item 線色を色彩50, 彩度255, 明度255で
-        %                     \item 塗り色を色彩122, 彩度255, 明度255で
-        %                     \item 背景を色彩200, 彩度255, 明度255で
-        %                     \item 線幅10pxで
-        %                     \item 点(50, 50)から横80px. 縦80pxの円
-        %                 \end{itemize}
-        %             \end{block}
-        %         \end{column}
-        %     \end{columns}
-        % \end{frame}
-        %
-        % \begin{frame}
-        %     \frametitle{実行結果}
-        %         \begin{figure}[htb]
-        %             \includegraphics[width=24mm]{images/09.png}
-        %             \caption{色が変わった}
-        %             \label{fig:09}
-        %         \end{figure}
-        % \end{frame}
-
-        % \begin{frame}\frametitle{CSVを読み込む}
-        % \end{frame}
+% CSVの値の指定
+        \begin{frame}
+            \frametitle{CSVデータの指定}
+            \begin{columns}[c]
+                \begin{column}{0.50\textwidth}
+                    \begin{figure}[htb]
+                        \includegraphics[width=50mm]{images/13.png}
+                        \caption{CSV中身}
+                        \label{fig:13}
+                    \end{figure}
+                \end{column}
+                \begin{column}{0.50\textwidth}
+                    \begin{block}{指定の仕方}
+                        \begin{itemize}
+                            \tiny
+                            \item i は誰のデータか（0 - 17番目までの18名分）
+                            \item j はCSVの何列目か
+                            \item k は何行目か
+                            \item 図の場合は「data[0][3][2]」
+                            \item 同じ人の違う項目は「j」を変える
+                            \item 違う人の同じ項目は「i」を変える
+                        \end{itemize}
+                    \end{block}
+                \end{column}
+            \end{columns}
+        \end{frame}
 
 
 \end{document}
