@@ -62,15 +62,15 @@ for (int i = 1; i < 2; i++) {
       //アルファを4列目の値に設定
       stroke(150, 255, 255, float(data[i][3][k]));
       //点と点の間を線でつなぐ
-      if (k < row[i] - 1) line(20 + float(time[0]) * 60 + float(time[1]), height - 20 - 100 * float(day[1]), 20 + float(time[0]) * 60 + float(time[1]), height - 20 - float(data[i][3][k + 1]) - 100 * float(day[1]));
+      line(20 + float(time[0]) * 60 + float(time[1]), height - 20 - 100 * float(day[1]), 20 + float(time[0]) * 60 + float(time[1]), height - 20 - float(data[i][3][k]) - 100 * float(day[1]));
       //アルファを5列目の値に設定
       stroke(210, 255, 255, float(data[i][4][k]));
       //点と点の間を線でつなぐ
-      if (k < row[i] - 1) line(20 + float(time[0]) * 60 + float(time[1]), height - 20 - 100 * float(day[1]), 20 + float(time[0]) * 60 + float(time[1]), height - 20 - float(data[i][4][k + 1]) - 100 * float(day[1]));
+      line(20 + float(time[0]) * 60 + float(time[1]), height - 20 - 100 * float(day[1]), 20 + float(time[0]) * 60 + float(time[1]), height - 20 - float(data[i][4][k]) - 100 * float(day[1]));
       //アルファを6列目の値に設定
       stroke(130, 255, 255, float(data[i][5][k]));
       //点と点の間を線でつなぐ
-      if (k < row[i] - 1) line(20 + float(time[0]) * 60 + float(time[1]), height - 20 - 100 * float(day[1]), 20 + float(time[0]) * 60 + float(time[1]), height - 20 - float(data[i][5][k + 1]) - 100 * float(day[1]));
+      line(20 + float(time[0]) * 60 + float(time[1]), height - 20 - 100 * float(day[1]), 20 + float(time[0]) * 60 + float(time[1]), height - 20 - float(data[i][5][k]) - 100 * float(day[1]));
     }
   }
 }

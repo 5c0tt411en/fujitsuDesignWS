@@ -69,7 +69,7 @@ text("POSTURE", 180, 270);
 //初期化
 for (int i = 0; i < 1440; i++) average[0][i] = 0;
 
-for (int i = 1; i < 2; i++) {
+for (int i = 17; i < 18; i++) {
   for (int j = 0; j < column; j++) {
     for (int k = 1; k < row[i]; k++) {
       /* ------------ここに処理を書く-------------- */
