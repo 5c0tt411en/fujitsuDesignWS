@@ -4,7 +4,7 @@
 - Examples/lecture/ 内にスライドプログラムサンプルがあります．
 
 ## Examples/
-- EmptyExample : 雛型．ここから発展させていく．
+- EmptyExample : 雛型．ここから発展させていく
 - Example01    : 円で表示する
 - Example02    : データで色を決定する
 - Example03    : 点と点を線で繋いでで表示する
@@ -12,4 +12,6 @@
 - Example05    : 頂点を記憶して一つの多角形として表示する
 - Example06    : データをテキストで表示する
 - Example07    : 線で円状に表示する
-
+- Example08    : 日付，時間ごとに分けて表示する
+- advanced01   : 立体で表示する
+- advanced02   : 日付，時間にわけて表示し，平均も表示する
